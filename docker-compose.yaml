@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - __PATH_TO_nginx_conf__:/etc/nginx/nginx.conf
+      - __PATH_TO_nginx_settings__:/etc/nginx/nginx-settings
+      - __PATH_TO_nginx_server_blocks__:/etc/nginx/conf.d
+    depends_on:
+      - nextjs-app
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
