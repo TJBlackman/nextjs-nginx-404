@@ -54,3 +54,6 @@ My NginX server serves more than just my NextJS App, including static files on t
 3. Host NextJS app static files on host machine instead of inside Docker container, and configure NginX to serve those files. I don't like this solution, as it separates the static files from the server file. Although, it may be more performant, it does add some complexity. 6/10 solution.
    - I'm actually currently doing this, and it was obnoxious to set up, and also obnoxious to wrap my head around it when I came back to it 8 months later.
 4. Same as 3, but upload files to CDN instead of hosting on NginX machine. Same pros and cons as solution 3. 7/10 solution.
+
+
+> Note: Serving static files froma JS server is SLOW! For public production applications, use a dedicated file server (CDN, NginX, etc). Above all, know the pros and cons of the solutions above, and choose what's best for your specific use case.
